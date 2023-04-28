@@ -1,11 +1,20 @@
+using DAL.Data.Context;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
+#region default services
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+#endregion
+
+#region context
+var connectionString = builder.Configuration.GetConnectionString("TicketIssueDB_ConStr");
+builder.Services.AddDbContext<Context>(options => options.UseSqlServer(connectionString));
+#endregion
 
 var app = builder.Build();
 
