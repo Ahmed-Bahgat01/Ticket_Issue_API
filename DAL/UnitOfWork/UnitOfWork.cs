@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DAL.UnitOfWork;
 
-internal class UnitOfWork : IUnitOfWork
+public class UnitOfWork : IUnitOfWork
 {
     private readonly Context _context;
 
@@ -22,7 +22,7 @@ internal class UnitOfWork : IUnitOfWork
 
     public IDeveloperRepo Developers => new DeveloperRepo(_context);
 
-    public ITiketRepo Tikets => new TiketRepo(_context);
+    public ITicketRepo Tickets => new TicketRepo(_context);
 
     public void Dispose()
     {

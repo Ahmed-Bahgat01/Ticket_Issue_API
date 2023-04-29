@@ -7,6 +7,6 @@ using System.Threading.Tasks;
 
 namespace DAL.Repos.Interfaces;
 
-internal interface IDepartmentRepo : IEntityRepo<Department>
+public interface IDepartmentRepo : IEntityRepo<Department>
 {
 }

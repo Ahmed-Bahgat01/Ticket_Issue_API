@@ -2,10 +2,10 @@
 
 namespace DAL.UnitOfWork;
 
-internal interface IUnitOfWork: IDisposable
+public interface IUnitOfWork: IDisposable
 {
     IDepartmentRepo Departments { get; }
     IDeveloperRepo Developers { get; }
-    ITiketRepo Tikets { get; }
+    ITicketRepo Tickets { get; }
     int Save();
 }

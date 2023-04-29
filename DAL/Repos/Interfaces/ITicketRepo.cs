@@ -7,6 +7,6 @@ using System.Threading.Tasks;
 
 namespace DAL.Repos.Interfaces;
 
-internal interface ITiketRepo : IEntityRepo<Ticket>
+public interface ITicketRepo : IEntityRepo<Ticket>
 {
 }

@@ -1,6 +1,6 @@
 ﻿namespace DAL.Repos.Interfaces;
 
-internal interface IEntityRepo<T> where T : class
+public interface IEntityRepo<T> where T : class
 {
     T? GetById(int id);
     IEnumerable<T> GetAll();

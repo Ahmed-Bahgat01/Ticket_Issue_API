@@ -2,7 +2,7 @@
 
 namespace DAL.Data.Models;
 
-internal class DeveloperTicket
+public class DeveloperTicket
 {
     #region FK's
     [ForeignKey(nameof(Developer))]

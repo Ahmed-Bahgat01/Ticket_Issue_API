@@ -2,7 +2,7 @@
 
 namespace DAL.Data.Models;
 
-internal class Department
+public class Department
 {
     #region Properties
     [Key]

@@ -2,7 +2,7 @@
 
 namespace DAL.Data.Models;
 
-internal class Ticket
+public class Ticket
 {
     #region Properties
     [Key]

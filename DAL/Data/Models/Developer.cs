@@ -2,7 +2,7 @@
 
 namespace DAL.Data.Models;
 
-internal class Developer
+public class Developer
 {
     #region Properties
     [Key]
