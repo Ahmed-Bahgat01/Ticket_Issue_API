@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Repos;
 
-internal class DeveloperRepo : EntityRepo<Developer>, IDeveloperRepo
+public class DeveloperRepo : EntityRepo<Developer>, IDeveloperRepo
 {
     public DeveloperRepo(Context dbContext) : base(dbContext)
     {

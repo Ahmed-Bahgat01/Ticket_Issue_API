@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Repos;
 
-internal class DepartmentRepo : EntityRepo<Department>, IDepartmentRepo
+public class DepartmentRepo : EntityRepo<Department>, IDepartmentRepo
 {
     public DepartmentRepo(Context dbContext) : base(dbContext)
     {

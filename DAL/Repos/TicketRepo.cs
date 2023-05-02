@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Repos;
 
-internal class TicketRepo : EntityRepo<Ticket>, ITicketRepo
+public class TicketRepo : EntityRepo<Ticket>, ITicketRepo
 {
     public TicketRepo(Context dbContext) : base(dbContext)
     {

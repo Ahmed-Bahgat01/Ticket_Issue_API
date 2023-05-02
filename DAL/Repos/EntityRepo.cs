@@ -3,7 +3,7 @@ using DAL.Repos.Interfaces;
 
 namespace DAL.Repos;
 
-internal class EntityRepo<TEntity> : IEntityRepo<TEntity> where TEntity : class
+public class EntityRepo<TEntity> : IEntityRepo<TEntity> where TEntity : class
 {
     Context _dbContext;
 

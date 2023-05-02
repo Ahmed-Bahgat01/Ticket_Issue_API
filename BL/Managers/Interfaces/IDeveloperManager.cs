@@ -6,6 +6,6 @@ using System.Threading.Tasks;
 
 namespace BL.Managers.Interfaces;
 
-internal interface IDeveloperManager
+public interface IDeveloperManager
 {
 }
