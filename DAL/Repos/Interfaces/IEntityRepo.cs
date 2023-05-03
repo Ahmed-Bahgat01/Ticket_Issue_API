@@ -1,4 +1,6 @@
-﻿namespace DAL.Repos.Interfaces;
+﻿using System.Linq.Expressions;
+
+namespace DAL.Repos.Interfaces;
 
 public interface IEntityRepo<T> where T : class
 {
@@ -7,4 +9,5 @@ public interface IEntityRepo<T> where T : class
     void Add(T entity);
     void Delete(T entity);
     void Update(T entity);
+    IEnumerable<T> Search(Expression<Func<T, bool>> predicate);
 }

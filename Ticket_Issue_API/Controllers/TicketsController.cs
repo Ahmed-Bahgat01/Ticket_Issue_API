@@ -1,4 +1,5 @@
-﻿using BL.DTOs.Ticket;
+﻿using BL.DTOs;
+using BL.DTOs.Ticket;
 using BL.Managers.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -9,7 +10,7 @@ namespace Ticket_Issue_API.Controllers;
 [ApiController]
 public class TicketsController : ControllerBase
 {
-    #region CTOR & FEILDS
+    #region Constructor & Feilds
     private readonly ITicketManager _ticketManager;
 
     public TicketsController(ITicketManager ticketManager)
@@ -18,7 +19,7 @@ public class TicketsController : ControllerBase
     }
     #endregion
 
-
+    #region Endpoints
     [HttpGet]
     public ActionResult<List<TicketReadDto>> GetAll()
     {
@@ -39,8 +40,19 @@ public class TicketsController : ControllerBase
     [HttpPost]
     public ActionResult Add(TicketAddDto ticketAddDto)
     {
-        var newTicketId = _ticketManager.Add(ticketAddDto);
-        return CreatedAtAction(nameof(GetDetails), new { Id = newTicketId });
+        int newTicketId;
+        try
+        {
+            newTicketId = _ticketManager.Add(ticketAddDto);
+        }
+        catch (Exception e)
+        {
+            return NotFound(new GeneralResponseDto { Message = $"{e.Message}" });
+        }
+        return CreatedAtAction(
+            nameof(GetDetails), 
+            new { Id = newTicketId }, 
+            new GeneralResponseDto { Message = "Ticket Created Successfully"});
     }
 
 
@@ -66,5 +78,6 @@ public class TicketsController : ControllerBase
         _ticketManager.delete(id);
         return NoContent();
     }
-    
+
+    #endregion
 }

@@ -23,6 +23,6 @@ public class Ticket
 
     #region Navigation properties
     public Department? Department { get; set; }
-    ICollection<DeveloperTicket> DevelopersTickets { get; set; } = new HashSet<DeveloperTicket>();
+    public ICollection<DeveloperTicket> DevelopersTickets { get; set; } = new HashSet<DeveloperTicket>();
     #endregion
 }

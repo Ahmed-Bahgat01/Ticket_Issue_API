@@ -9,4 +9,5 @@ namespace DAL.Repos.Interfaces;
 
 public interface IDepartmentRepo : IEntityRepo<Department>
 {
+    Department? GetWithTicketsAndDevelopers(int id);
 }
